@@ -1,4 +1,4 @@
-import SearchBar from "./SearchBox.jsx";
+import SearchBox from "./SearchBox.jsx";
 import InfoBox from "./InfoBox.jsx";
 import { useState } from "react";
 
@@ -12,11 +12,16 @@ export default function WeatherApp()
         humidity : 47,
         feels_like : 24.87,
         weather : "haze",
-    })
+    });
+
+    let updateInfo = (newInfo) =>{
+        setWeatherInfo(newInfo);
+    }
+
     return (
         <div style={{ textAlign: "center" }}>
             <h1>Weather App by Mayank</h1>
-            <SearchBar />
+            <SearchBox updateInfo={updateInfo} />
             <InfoBox mainResult={weatherInfo} />
         </div>
     );
