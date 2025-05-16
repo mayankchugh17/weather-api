@@ -1,12 +1,12 @@
-import SearchBox from "./SearchBox"
+import WeatherApp from './WeatherApp';
+
 function App() {
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      <p>Get the latest weather updates!</p>
-      <SearchBox></SearchBox>
+      <WeatherApp />     
     </div>
   )
 }
 
 export default App
+ 

@@ -13,6 +13,7 @@ export default function SearchBox() {
        let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}`);
        let JSONresponse = await response.json();
        let mainResult = {
+        city : city,
         temp : JSONresponse.main.temp,
         tempMin : JSONresponse.main.temp_min,
         tempMax : JSONresponse.main.temp_max,
@@ -34,7 +35,6 @@ export default function SearchBox() {
     }   
         return(
             <div className='search-box'>
-                <h1>Search for weather</h1>
                 <form onSubmit={handleSubmit}>
                       <TextField id="outlined-basic" label="Outlined" variant="outlined" value={city} onChange={handleChange}> </TextField>
                      <br /><br /><br />
